@@ -1,0 +1,191 @@
+/* General Styles */
+body {
+    font-family: Inter;
+    padding: 0;
+    line-height: 1.6;
+    margin: 0;
+    box-sizing: 0;
+    background-color: #e5e5e5;
+    width: 100%;
+}
+
+header {
+    color: white; 
+    text-align: center;
+}
+
+.top-bar {
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 40px;
+    margin-left: auto;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.about-us {
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+}
+
+#webhead {
+    width: 100%;
+    height: 124px;
+    top: 83px;
+    background-color: #14213d;
+    display: inline-block;
+    vertical-align: middle;
+    display: flex; /* Enables Flexbox */
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Adds space between the <h1> and <nav> */
+    color: #FFFFFF;
+}
+
+#webhead img {
+    height: 80px;
+    padding-left: 3%;
+}
+
+#webhead nav {
+    list-style: none;
+    padding-right: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+#webhead nav a {
+    width: 72;
+    height: 37;
+    top: 127;
+    left: 765;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#webhead nav b {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+/* Login Section */
+#login {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    width: 609px;
+    height: 527px;
+    top: 302px;
+    left: 416px;
+    color: #14213d;
+    background-color: #D9D9D9;
+}
+
+#login h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+#login hr {
+    border: none; /* Removes any conflicting border styles */
+    height: 5px; /* Controls the thickness of the line */
+    background-color: #14213D; /* Sets the line color */
+    margin: 20px 0; /* Optional: Adjusts spacing around the line */  
+}
+
+#login form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#login form label {
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    color: #14213D;
+    width: 603px;
+    height: 35px;
+
+}
+
+#login form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+
+#login form button {
+    padding: 10px;
+    background-color: #FCA311;
+    color: #14213D;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+    width: 185px;
+    height: 54px;
+    margin: 0 auto;
+}
+
+#login form button:hover {
+    background-color: #0056b3;
+}
+
+#login p {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    padding-top: 3%;
+}
+
+#login p a {
+    color: #14213D;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color:#14213D ;
+    text-align: center;
+    padding: 12px;
+}
+
+footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 90px;
+    margin-right: 90px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    vertical-align: middle;
+}
