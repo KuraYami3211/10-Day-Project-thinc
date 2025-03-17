@@ -1,18 +1,15 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+document.getElementById("login").addEventListener("click", async () => {
+    // ส่งคำขอไปยัง backend เพื่อ login
+    const response = await fetch("http://localhost:5000/auth/google");
+    const data = await response.json();
 
-    // Get input values
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    if (data.token) {
+      // เก็บ token ใน localStorage
+      localStorage.setItem("token", data.token);
 
-    // Simple validation
-    if (username === 'user' && password === 'password') {
-        // Successful login
-        // alert('Login successful!');
-        // Redirect or perform other actions
-        window.location.href = 'Content_Selection.html'; // Example redirect
+      // เปลี่ยนเส้นทางไปยังหน้า Home
+      window.location.href = "home.html";
     } else {
-        // Display error message
-        alert('Invalid username or password');
+      alert("Login failed!");
     }
-});
+  });

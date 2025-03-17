@@ -2,7 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
 }
-body {
+/* body {
     display: flex;
     flex-direction: column;
     font-family: Inter;
@@ -61,9 +61,9 @@ header {
     background-color: #14213d;
     display: inline-block;
     vertical-align: middle;
-    display: flex; /* Enables Flexbox */
-    align-items: center; /* Aligns items vertically */
-    justify-content: space-between; /* Adds space between the <h1> and <nav> */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: #FFFFFF;
 }
 
@@ -96,6 +96,91 @@ header {
 #webhead nav b {
     font-weight: 800;
     font-size: 20px;
+} */
+body {
+    font-family: Inter;
+    padding: 0;
+    line-height: 1.6;
+    margin: 0;
+    box-sizing: 0;
+    background-color: #e5e5e5;
+    width: 100%;
+}
+
+/* 
+search_bar 
+*/
+.top-bar {
+    background-color: #E5E5E5;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 40px;
+    margin-left: auto;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.about-us {
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+}
+
+/* 
+header
+ */
+.header {
+    background-color: #14213D;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    color: white;
+
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
 /* 
@@ -109,6 +194,10 @@ main
     justify-content: center;
     
 }
+/* 
+.autocomplete {
+    padding: 40px;
+} */
 
 .selection input{
     border: none;
@@ -116,6 +205,36 @@ main
     padding: 12px;
     border-radius: 40px;
     margin: 10px;
+}
+
+/* #major {
+    width: 100%;
+} */
+
+.suggestions {
+    position: absolute;
+    width: 2000px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.suggestions div input{
+    width: 300px;
+}
+
+.suggestions div:hover, .suggestions .selected {
+    background: #f0f0f0;
 }
 
 .text_selection{
