@@ -1,0 +1,29 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE or editor directories and files
+.vscode/
+.idea/
+
+# NPM debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional: Coverage output directory
+coverage/
+
+# Optional: Debugging tools
+*.pid
+*.gz
