@@ -1,4 +1,10 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Inter;
     padding: 0;
     line-height: 1.6;
@@ -129,6 +135,7 @@ main
 footer
 */
 footer{
+    margin-top: auto;
     background-color:#14213D ;
     text-align: center;
     padding: 12px;
