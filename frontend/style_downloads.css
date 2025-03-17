@@ -1,0 +1,199 @@
+body {
+    font-family: Inter;
+    padding: 0;
+    line-height: 1.6;
+    margin: 0;
+    box-sizing: 0;
+    background-color: #e5e5e5;
+    width: 100%;
+}
+
+header {
+    color: white; 
+    text-align: center;
+}
+
+.top-bar {
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 40px;
+    margin-left: auto;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.about-us {
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+}
+
+#webhead {
+    width: 100%;
+    height: 124px;
+    top: 83px;
+    background-color: #14213d;
+    display: inline-block;
+    vertical-align: middle;
+    display: flex; /* Enables Flexbox */
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Adds space between the <h1> and <nav> */
+    color: #FFFFFF;
+}
+
+#webhead img {
+    height: 80px;
+    padding-left: 3%;
+}
+
+#webhead nav {
+    list-style: none;
+    padding-right: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+#webhead nav a {
+    width: 72;
+    height: 37;
+    top: 127;
+    left: 765;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#webhead nav a:hover {
+    text-decoration: underline;
+}
+
+#webhead nav b {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+main {
+    display: flex;
+    height: calc(100vh - 120px);
+    background-color: white;
+}
+
+.sidebar {
+    width: 396px;
+    background: #e5e5e5;
+    color: #14213D;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.course-title {
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.course-title img {
+    width: 20px;
+}
+
+.menu {
+    margin-top: 15px;
+}
+
+.menu-item {
+    margin-top: 10px;
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.menu-item span {
+    font-weight: 700;
+    font-size: 25px;
+    height: 32px;
+}
+
+.menu-item ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.menu-item ul li {
+    margin: 5px 0;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.menu-item ul li:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#download {
+    width: 841px;
+    height: 82px;
+    top: 240px;
+    left: 580px;
+    background-color: #fca311;
+    border-radius: 25px;
+    position: absolute;
+    display: flex;
+    gap: 20px;
+}
+
+#download h1 {
+    padding-top: 22px;
+    padding-left: 300px;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: #14213D;
+}
+
+#download img {
+    height: 60px;
+    padding-top: 10px;
+}
+
+footer{
+    background-color:#14213D ;
+    text-align: center;
+    padding: 12px;
+}
