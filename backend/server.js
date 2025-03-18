@@ -46,7 +46,11 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/" }),
   googleAuthCallback // Call the controller function
 );
-
+app.get("/auth/google", (req, res, next) => {
+  const redirectUri = `${process.env.SERVER_URL}/auth/google/callback`;
+  console.log("Redirect URI Used:", redirectUri); // Log the redirect URI BEFORE authentication
+  next();
+})
 passport.serializeUser((user, done) => {
   done(null, user);
 });
