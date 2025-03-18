@@ -111,10 +111,10 @@ header
 }
 
 #login hr {
-    border: none; /* Removes any conflicting border styles */
-    height: 5px; /* Controls the thickness of the line */
-    background-color: #14213D; /* Sets the line color */
-    margin: 20px 0; /* Optional: Adjusts spacing around the line */  
+    border: none;
+    height: 5px;
+    background-color: #14213D;
+    margin: 20px 0;  
 }
 
 #login form {
