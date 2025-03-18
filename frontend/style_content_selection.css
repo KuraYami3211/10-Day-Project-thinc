@@ -208,7 +208,15 @@ main
 }
 
 .selection button {
+    padding: 12px;
     background-color: #14213D;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
 }
 
 /* #major {
