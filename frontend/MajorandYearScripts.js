@@ -92,9 +92,14 @@ async function recommendedCourses() {
             const courseDetail = document.createElement("p");
             courseDetail.innerHTML = course.courseDetail || "Course Description"; // Fallback if courseName is missing
 
+            const courseFilter = document.createElement("input");
+            courseFilter.type = "checkbox";
+            courseDetail.innerHTML = course.courseDetail || "Course Description";
+
             courseInfo.appendChild(courseID);
             courseInfo.appendChild(courseName);
             courseInfo.appendChild(courseDetail);
+            courseInfo.appendChild(courseFilter);
 
             courseContainer.appendChild(courseImg);
             courseContainer.appendChild(courseInfo);
