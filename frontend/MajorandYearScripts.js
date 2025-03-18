@@ -10,7 +10,7 @@ const engineeringMajors = [
     "วิศวกรรมเซมิคอนดักเตอร์"
 ];
 
-const academicYears = ["1", "2", "3", "4", "5", "6", "7", "8"]; // ปีการศึกษา
+const academicYears = ["1/1", "1/2", "2/1", "2/2", "3/1", "3/2", "4/1", "4/2"]; // ปีการศึกษา
 
 // ฟังก์ชัน Autocomplete
 function setupAutocomplete(inputElement, suggestionElement, dataList) {
@@ -46,6 +46,61 @@ function setupAutocomplete(inputElement, suggestionElement, dataList) {
         }
     });
 }
+async function recommendedCourses() {
+    const department = userMajor.value;
+    const year = userYear.value;
+    const resultContainer = document.getElementById("course-container");
+
+    // Check if the result container exists
+    if (!resultContainer) {
+        console.error("course-container not found in the DOM!");
+        return;
+    }
+    else{
+        console.log(resultContainer);
+    }
+
+
+    const response = await fetch("http://localhost:3000/recommend", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ department, year }),
+    });
+
+    const data = await response.json();
+
+    if (data.recommendedCourses) {
+        data.recommendedCourses.forEach(course => {
+            const courseContainer = document.createElement("div");
+            courseContainer.className = "course-card selected";
+            
+            const courseImg = document.createElement("img");
+            courseImg.src =  course.courseName.replace(" ","") + ".png"; // Ensure the image path is correct
+            courseImg.className = "course-icon";
+
+            const courseInfo = document.createElement("div");
+            courseInfo.className = "course-info";
+
+            const courseID = document.createElement("h2");
+            courseID.innerHTML = course.couseID ; // Fallback if courseID is missing
+
+            const courseName = document.createElement("p");
+            courseName.innerHTML = course.courseName || "No Name Available"; // Fallback if courseName is missing
+
+            courseInfo.appendChild(courseID);
+            courseInfo.appendChild(courseName);
+
+            courseContainer.appendChild(courseImg);
+            courseContainer.appendChild(courseInfo);
+            resultContainer.appendChild(courseContainer);
+        });
+    } else {
+        resultContainer.innerHTML = `<li>${data.message}</li>`;
+    }
+}
+
 
 async function recommendedCourses() {
     const department = userMajor.value;
