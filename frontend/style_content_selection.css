@@ -219,10 +219,6 @@ main
     margin: 10px;
 }
 
-/* #major {
-    width: 100%;
-} */
-
 .suggestions {
     position: absolute;
     width: 350px;
@@ -241,9 +237,9 @@ main
     font-size: 16px;
 }
 
-.suggestions div input{
-    width: 300px;
-}
+/* .suggestions div input{
+    width: 30px;
+} */
 
 .suggestions div:hover, .suggestions .selected {
     background: #f0f0f0;
@@ -256,6 +252,50 @@ main
     font-size: 30px;
     font-weight: 700;
 }
+
+
+
+.course-card-selected {
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background-color: white;
+    color: #14213d;
+}
+
+.course-card-selected .course-icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.course-card-selected .course-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    padding-right: 20%;
+    flex: 1;
+}
+
+.course-info h2, .course-info h3 {
+    margin: 0; 
+    padding: 5px 0;
+    margin-left: 5%;
+}
+
+.course-info p {
+    margin: 0; 
+    padding: 5px 0;
+    color: gray;
+    margin-left: 5%;
+}
+
 
 #load{
     text-align: center;
