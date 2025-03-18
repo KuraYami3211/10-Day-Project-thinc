@@ -7,99 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!-- <link href="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> -->
 
     <title>CUgetA</title>
 </head>
 <body>
-        <!-- <section id="search">
-            <input type="text" id="searchbar" placeholder="Search" >
-            <a href="#">About Us</a>
-        </section>
-        <section id="webhead">
-            <img src="CUgetA_Logo.png">
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Login</a>
-                <a href="#">Content Selection</a>
-                <a href="#">Video Lessons</a>
-                <a href="#">Downloads</a>
-            </nav>
-        </section> -->
-        <!-- <div class="px-3 py-2 border-bottom mb-3">
-            <div class="container d-flex flex-wrap justify-content-center">
-              <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-              </form>
-      
-              <div class="text-end">
-                <button type="button" class="btn btn-light text-dark me-2">Login</button>
-                <button type="button" class="btn btn-primary">Sign-up</button>
-              </div>
-            </div>
-          </div>
-        <div class="px-3 py-2 bg-dark text-white">
-            <div class="container">
-              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                  <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-                </a>
-      
-                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                  <li>
-                    <a href="#" class="nav-link text-secondary">
-                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white">
-                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white">
-                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                      Orders
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white">
-                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                      Products
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white">
-                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                      Customers
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          </div>
-    </header> -->
-    <!-- <header>
-        <section id="site_search">
-            <input type="text" name="Search" id="search">
-            <p id="about_us">About Us</p>
-        </section>
-        <section id="site_CUGetA">
-            <img src="CUgetA_Logo.png" alt="CUGetA logo" height="100px">
-            <nav id="site_web">
-                <a href="#">Home</a>
-                <a href="#">Login</a>
-                <a href="#">Content selection</a>
-                <a href="#">Video Lessons</a>
-                <a href="#">Downloads</a>
-            </nav>
-        </section>
-    </header> -->
-    <div class="top-bar">
+    <!-- <div class="top-bar">
       <div class="search-bar">
           <input type="text" placeholder="Search">
           <button><img src="search-icon.png" alt="Search" height="16"></button>
@@ -117,26 +29,53 @@
               <a href="Downloads.html">Downloads</a>  
           </nav>
       </section>
+  </header> -->
+  <div class="top-bar">
+      <div class="search-bar">
+          <input type="text" placeholder="Search">
+          <button><img src="search-icon.png" alt="Search" height="16"></button>
+      </div>
+      <a href="#" class="about-us">About Us</a>
+  </div>
+  <header class="header">
+      <div class="logo">
+          <img src="CUgetA_Logo.png" alt="CUGetA logo" height="100px">
+      </div>
+      <nav class="nav-links">
+          <a href="home.html">Home</a>
+          <!-- <a href="Login.html">Login</a> -->
+          <a href="Content_Selection.html"><b>Content Selection</b></a>
+          <a href="Video_Lessons.html">Video Lessons</a>
+          <a href="Downloads.html">Downloads</a>
+          <a href="firsthome.html">Logout</a>
+      </nav>
   </header>
-    <main>
-        <section class="selection">
-            <p class="text_selection">Major</p>
-            <input type="text" name="Major" id="major" placeholder="Enter your Major">
-            <p class="text_selection">Year</p>
-            <input type="text" name="Year" id="year" placeholder="Enter your year">
-            <p class="text_selection">Filter</p>
-            <input type="checkbox" name="Filter" id="filter">
-        </section>
-        <section>
-            <p>pp</p>
-            <hr>
-        </section>
-        <section id="load">
-            <p>Load more</p>
-        </section>
-    </main>
-    <footer>
-        <img src="CUgetA_Logo.png" alt="CUGetA logo"  height="35px">
-    </footer>
+  <main>
+      <section class="selection">
+          <p class="text_selection">Major</p>
+          <div class="autocomplete">
+          <input type="text" name="Major" id="major" placeholder="Enter your Major" style="width: 300px;">
+          <div id="majorSuggestionList" class="suggestions"></div> <!-- แก้ id ให้ถูกต้อง -->
+          </div>
+          <p class="text_selection">Year</p>
+          <div class="autocomplete">
+          <input type="text" name="Year" id="year" placeholder="Enter your year" style="width: 100px;">
+          <div id="YearSuggestionList" class="suggestions"></div> <!-- แก้ id ให้ถูกต้อง -->
+          </div>
+          <p class="text_selection">Filter</p>
+          <input type="checkbox" name="Filter" id="filter">
+          <button onclick="recommendedCourses()">แนะนำคอร์ส</button>
+          <script src="MajorandYearScripts.js"></script>
+      </section>
+      <div id="course-container">    
+      </div>
+      <hr>
+      <section id="load">
+          <p>Load more</p>
+      </section>
+  </main>
+  <footer>
+      <img src="CUgetA_Logo.png" alt="CUGetA logo"  height="35px">
+  </footer>
 </body>
 </html>
