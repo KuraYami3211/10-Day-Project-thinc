@@ -1,0 +1,147 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Inter;
+    padding: 0;
+    line-height: 1.6;
+    margin: 0;
+    box-sizing: 0;
+    background-color: #e5e5e5;
+    width: 100%;
+}
+
+/* 
+header
+ */
+.header {
+    background-color: #14213D;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* 
+main
+*/
+#intro {
+    padding-left: 65px;
+    margin: 0;
+}
+
+#intro h1 {
+    font-size: 40px;
+    height: 69px;
+    width: 491px;
+    top: 226px;
+    margin-bottom: 0;
+}
+
+#intro h3 {
+    font-size: 20px;
+    height: 35px;
+    width: 911px;
+    top: 297px;
+    margin-top: 0;
+}
+
+/* 
+Login Section 
+*/
+#login {
+    display: flex;
+    max-width: 400px;
+    margin: 82px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    width: 230px;
+    height: 75px;
+    color: #14213d;
+    background-color: #D9D9D9;
+    justify-content: center;
+    align-items: center;
+}
+
+#login button {
+    padding: 10px;
+    background-color: #FCA311;
+    color: #14213D;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+    width: 250px;
+    height: 75px;
+    margin: auto;
+}
+
+#login button a {
+    text-decoration: none;
+    color: #14213D;
+}
+
+#login button:hover {
+    background-color: #0056b3;
+}
+
+#login button:hover a {
+    color: #D9D9D9;
+}
+
+/* 
+footer 
+*/
+footer {
+    background-color:#14213D ;
+    text-align: center;
+    padding: 12px;
+    height: 164px;
+    top: 836px;
+}
+
+footer img {
+    height: 70px;
+    padding-top: 25px; 
+}
+
+footer p {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+}
+

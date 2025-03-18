@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 /* General Styles */
 body {
     font-family: Inter;
@@ -9,13 +14,8 @@ body {
     width: 100%;
 }
 
-header {
-    color: white; 
-    text-align: center;
-}
-
 .top-bar {
-    background-color: #e0e0e0;
+    background-color: #E5E5E5;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -49,48 +49,41 @@ header {
     margin: 20px;
 }
 
-#webhead {
-    width: 100%;
-    height: 124px;
-    top: 83px;
-    background-color: #14213d;
-    display: inline-block;
-    vertical-align: middle;
-    display: flex; /* Enables Flexbox */
-    align-items: center; /* Aligns items vertically */
-    justify-content: space-between; /* Adds space between the <h1> and <nav> */
-    color: #FFFFFF;
+/* 
+header
+ */
+.header {
+    background-color: #14213D;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-#webhead img {
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
     height: 80px;
-    padding-left: 3%;
+    margin-right: 10px;
 }
 
-#webhead nav {
-    list-style: none;
-    padding-right: 20px;
+.nav-links {
     display: flex;
     gap: 20px;
+
 }
 
-#webhead nav a {
-    width: 72;
-    height: 37;
-    top: 127;
-    left: 765;
-    color: #FFFFFF;
-    font-size: 20px;
+.nav-links a {
+    color: white;
     text-decoration: none;
-}
-
-#webhead nav a:hover {
-    text-decoration: underline;
-}
-
-#webhead nav b {
-    font-weight: 800;
     font-size: 20px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
 /* Login Section */
