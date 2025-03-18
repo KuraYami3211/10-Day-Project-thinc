@@ -207,13 +207,17 @@ main
     margin: 10px;
 }
 
+.selection button {
+    background-color: #14213D;
+}
+
 /* #major {
     width: 100%;
 } */
 
 .suggestions {
     position: absolute;
-    width: 2000px;
+    width: 350px;
     border: 1px solid #ccc;
     border-top: none;
     background: white;
