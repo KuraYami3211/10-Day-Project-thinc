@@ -2,16 +2,9 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 async function googleAuthCallback(req, res) {
-    console.log("Google OAuth Callback triggered"); // Log function call
-    // console.log(" Google Profile Data:", req.user); // Log Google data
     let user = await User.findOne({ googleId: 1});
-    // if (!user) {
-    //     user = new User({ googleId: 1, emails: 1, email: 1});
-    //     await user.save();
-    // }
     
     const { _json } = req.user; // Google response
-    console.log("User:", _json);
     // Check for email
     if (!_json.email || _json.email === null) {
         return res.status(400).json({ message: "Email is required" });
