@@ -2,7 +2,6 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 async function googleAuthCallback(req, res) {
-    let user = await User.findOne({ googleId: 1});
     
     const { _json } = req.user; // Google response
     // Check for email
