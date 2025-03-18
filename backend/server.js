@@ -27,7 +27,6 @@ app.use(session({ secret: "supersecret", resave: false, saveUninitialized: true 
 // Initialize Passport
 app.use(passport.initialize());
 app.use(passport.session());
-
 passport.use(
   new GoogleStrategy(
     {
