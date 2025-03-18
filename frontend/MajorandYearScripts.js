@@ -102,6 +102,61 @@ async function recommendedCourses() {
 }
 
 
+async function recommendedCourses() {
+    const department = userMajor.value;
+    const year = userYear.value;
+    const resultContainer = document.getElementById("course-container");
+
+    // Check if the result container exists
+    if (!resultContainer) {
+        console.error("course-container not found in the DOM!");
+        return;
+    }
+    else{
+        console.log(resultContainer);
+    }
+    resultContainer.innerHTML = "";
+    const response = await fetch("http://localhost:3000/recommend", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ department, year }),
+    });
+
+    const data = await response.json();
+
+    if (data.recommendedCourses) {
+        data.recommendedCourses.forEach(course => {
+            const courseContainer = document.createElement("div");
+            courseContainer.className = "course-card selected";
+            
+            const courseImg = document.createElement("img");
+            courseImg.src =  course.courseName.replace(" ","") + ".png"; // Ensure the image path is correct
+            courseImg.className = "course-icon";
+
+            const courseInfo = document.createElement("div");
+            courseInfo.className = "course-info";
+
+            const courseID = document.createElement("h2");
+            courseID.innerHTML = course.couseID ; // Fallback if courseID is missing
+
+            const courseName = document.createElement("p");
+            courseName.innerHTML = course.courseName || "No Name Available"; // Fallback if courseName is missing
+
+            courseInfo.appendChild(courseID);
+            courseInfo.appendChild(courseName);
+
+            courseContainer.appendChild(courseImg);
+            courseContainer.appendChild(courseInfo);
+            resultContainer.appendChild(courseContainer);
+        });
+    } else {
+        resultContainer.innerHTML = `<li>${data.message}</li>`;
+    }
+}
+
+
 
 // ใช้งานกับ Major
 const userMajor = document.getElementById("major");
