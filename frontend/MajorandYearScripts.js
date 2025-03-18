@@ -59,7 +59,7 @@ async function recommendedCourses() {
     else{
         console.log(resultContainer);
     }
-
+    resultContainer.innerHTML = "";
 
     const response = await fetch("http://localhost:3000/recommend", {
         method: "POST",
