@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!-- <link href="bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> -->
 
     <title>CUgetA</title>
 </head>
@@ -55,40 +54,22 @@
       <section class="selection">
           <p class="text_selection">Major</p>
           <div class="autocomplete">
-          <input type="text" name="Major" id="major" placeholder="Enter your Major" >
+          <input type="text" name="Major" id="major" placeholder="Enter your Major" style="width: 300px;">
           <div id="majorSuggestionList" class="suggestions"></div> <!-- แก้ id ให้ถูกต้อง -->
           </div>
           <p class="text_selection">Year</p>
           <div class="autocomplete">
-          <input type="text" name="Year" id="year" placeholder="Enter your year">
+          <input type="text" name="Year" id="year" placeholder="Enter your year" style="width: 100px;">
           <div id="YearSuggestionList" class="suggestions"></div> <!-- แก้ id ให้ถูกต้อง -->
           </div>
           <p class="text_selection">Filter</p>
           <input type="checkbox" name="Filter" id="filter">
+          <button onclick="recommendedCourses()">แนะนำคอร์ส</button>
           <script src="MajorandYearScripts.js"></script>
       </section>
-      <!-- <section class="selection">
-        <p class="text_selection">Major</p>
-        <div class="autocomplete">
-          <input type="text" name="Major" id="major" placeholder="Enter your Major">
-          <div id="majorSuggestionList" class="suggestions"></div>
-        </div>
-
-
-        <p class="text_selection">Year</p>
-        <div class="autocomplete">
-          <input type="text" name="Year" id="year" placeholder="Enter your year">
-          <div id="YearSuggestionList" class="suggestions"></div>
-        </div>
-
-        <p class="text_selection">Filter</p>
-        <input type="checkbox" name="Filter" id="filter">
-
-        <script src="MajorandYearScripts.js"></script>
-      </section> -->
-      <section>
-          <hr>
-      </section>
+      <div id="course-container">    
+      </div>
+      <hr>
       <section id="load">
           <p>Load more</p>
       </section>
