@@ -1,6 +1,8 @@
 html, body {
     height: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 /* body {
     display: flex;
@@ -253,8 +255,6 @@ main
     font-weight: 700;
 }
 
-
-
 .course-card-selected {
     display: flex;
     align-items: center;
@@ -279,8 +279,9 @@ main
     flex-direction: column;
     justify-content: center;
     margin-left: 20px;
-    padding-right: 20%;
+    /* padding-right: 20%; */
     flex: 1;
+    position: relative;
 }
 
 .course-info h2, .course-info h3 {
@@ -294,6 +295,14 @@ main
     padding: 5px 0;
     color: gray;
     margin-left: 5%;
+}
+
+.course-info input[type="checkbox"] {
+    position: absolute;
+    right: 0;
+    top: 50%; 
+    transform: translateY(-50%);
+    margin-right: 30px;
 }
 
 
