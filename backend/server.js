@@ -4,8 +4,8 @@ const passport = require("passport");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
-const mongoose = require("mongoose");
-const User = require("./models/User");
+//const mongoose = require("mongoose");
+//const User = require("./models/User");
 const authRoutes = require("./routes/auth");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const { googleAuthCallback } = require("./controllers/authController");
@@ -13,10 +13,10 @@ const { googleAuthCallback } = require("./controllers/authController");
 const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB")) // success
-  .catch((err) => console.log("Failed to connect to MongoDB", err)); // errors
+// mongoose
+//   .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log("Connected to MongoDB")) // success
+//   .catch((err) => console.log("Failed to connect to MongoDB", err)); // errors
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
@@ -72,9 +72,7 @@ app.get(
   (req, res) => {
     const user = req.user;
     console.log(user)
-    const token = jwt.sign({ id: user.googleId, email: user.email }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign({ id: user.googleId, email: user.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
     // Redirect to frontend with token
     res.redirect(`${process.env.CLIENT_URL}/dashboard?token=${token}`);
