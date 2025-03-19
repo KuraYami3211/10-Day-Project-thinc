@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const course = require("./data/courseInfo.js");
 const file = require("./data/file.js")
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static("frontend"));
 
@@ -51,6 +51,6 @@ app.post("/list-file", (req, res) => {
   }
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
