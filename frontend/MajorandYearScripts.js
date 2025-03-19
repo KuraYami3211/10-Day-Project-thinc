@@ -76,8 +76,12 @@ async function recommendedCourses() {
             const courseContainer = document.createElement("div");
             courseContainer.className = "course-card-selected";
             
+            const link = document.createElement("a");
+            link.href = "Video_Lessons.html";
+
             const courseImg = document.createElement("img");
-            courseImg.src =  course.courseName.replace(" ","") + ".png"; // Ensure the image path is correct
+            courseImg.src = "img/" + course.courseName.replace(" ", "") + ".png";
+
             courseImg.className = "course-icon";
 
             const courseInfo = document.createElement("div");
@@ -99,11 +103,14 @@ async function recommendedCourses() {
             courseInfo.appendChild(courseID);
             courseInfo.appendChild(courseName);
             courseInfo.appendChild(courseDetail);
-            courseInfo.appendChild(courseFilter);
+
+            
 
             courseContainer.appendChild(courseImg);
             courseContainer.appendChild(courseInfo);
-            resultContainer.appendChild(courseContainer);
+            courseContainer.appendChild(courseFilter);
+            link.appendChild(courseContainer);
+            resultContainer.appendChild(link);
         });
     } else {
         resultContainer.innerHTML = `<li>${data.message}</li>`;
