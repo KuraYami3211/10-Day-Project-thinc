@@ -34,7 +34,7 @@ app.post("/recommend", (req, res) => {
 );
 
 app.get("/", (req, res) =>{
-  res.sendFile(path.join(__dirname,"..","frontend","Content_Selection.html"))
+  res.sendFile(path.join(__dirname,"..","frontend","firsthome.html"))
 });
 
 app.listen(port, () => {
