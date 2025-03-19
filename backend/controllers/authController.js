@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const jwt = require('jsonwebtoken');
-const { Console } = require('console');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 
