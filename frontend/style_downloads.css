@@ -156,6 +156,7 @@ main {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding-bottom: 10px;
 }
 
 .menu-item span {
@@ -164,20 +165,32 @@ main {
     height: 32px;
 }
 
-/* .menu-item ul {
-    list-style: none;
-    padding-left: 15px;
+.menu-item a {
+    text-decoration: none;
+    color: #14213D;
 }
 
-.menu-item ul li {
-    margin: 5px 0;
+.choice {
+    padding-left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.choice a {
+    margin: 0;
     font-size: 13px;
     cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    color: #14213D;
+    padding-left: 15px;
+    font-weight: 500;
 }
 
-.menu-item ul li:hover {
+.choice a:hover {
     text-decoration: underline;
-} */
+} 
 
 .content {
     flex: 1;

@@ -165,11 +165,6 @@ main {
     height: 32px;
 }
 
-.menu-item a {
-    text-decoration: none;
-    color: #14213D;
-}
-
 .choice {
     padding-left: 80px;
     display: flex;
@@ -193,16 +188,6 @@ main {
     text-decoration: underline;
 } 
 
-
-.content {
-    flex: 1;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 #progress {
     width: 750px;
     height: 82px;
@@ -219,19 +204,19 @@ main {
     padding-top: 15px;
 }
 
-.video {
-    width: 800px;
-    height: 300px;
-    top: 330px;
-    left: 500px;
+#course-syllabus {
     background-color: #E5E5E5;
+    left: 526px;
+    border-radius: 25px;
+    top: 333px;
+    height: 300px;
+    width: 750px;
     position: absolute;
+    text-align: center;
 }
 
-.video iframe {
-    padding-left: 10px;
-    padding-top: 10px;
-    position: absolute;
+#course-syllabus h1 {
+    color: #14213D;
 }
 
 footer{
