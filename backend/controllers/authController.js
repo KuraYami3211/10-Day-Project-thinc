@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const jwt = require('jsonwebtoken');
+const { Console } = require('console');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 
@@ -26,15 +27,14 @@ function saveUsers(users) {
 
 async function googleAuthCallback(req, res) {
     const { _json } = req.user; // Google response
-
     // Check for email
     if (!_json.email || _json.email === null) {
         return res.status(400).json({ message: "Email is required" });
     }
 
     let users = readUsers();// Read users from memory
-
-    user = await users.find(u => u.googleId === _json.sub);
+    let token = 0;
+    let user = await users.find(u => u.googleId === _json.sub);
     if (!user) {
         user = await users.find(u => u.email === _json.email);
         if (user) {
@@ -48,15 +48,8 @@ async function googleAuthCallback(req, res) {
     } else {
         console.log("User already exists in memory:", user);
     }
-
-    // Generate JWT token
-    const token = jwt.sign(
-        { id: user._id, email: user.email },
-        process.env.JWT_SECRET,
-        { expiresIn: '7d' }
-    );
-
-    res.json({ token, user });
+    token = jwt.sign({ id: user.googleId, email: user.email, iat: 1710000000 }, process.env.JWT_SECRET);
+    res.redirect(`${process.env.CLIENT_URL}/home.html?token=${token}`);
 }
 
 module.exports = { googleAuthCallback };

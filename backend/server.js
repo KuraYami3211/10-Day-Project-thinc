@@ -41,12 +41,6 @@ passport.use(
 );
 
 // Google OAuth Strategy
-
-app.get("/auth/google", (req, res, next) => {
-  const redirectUri = `${process.env.SERVER_URL}/auth/google/callback`;
-  console.log("Redirect URI Used:", redirectUri); // Log the redirect URI BEFORE authentication
-  next();
-})
 passport.serializeUser((user, done) => {
   done(null, user);
 });
@@ -57,22 +51,11 @@ passport.deserializeUser((user, done) => {
 // Redirect to Google Login
 app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
-app.use((req, res, next) => {
-  console.log(`Incoming Request: ${req.method} ${req.url}`);
-  next();
-});
 // Google OAuth Callback
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
-  (req, res) => {
-    const user = req.user;
-    console.log(user)
-    const token = jwt.sign({ id: user.googleId, email: user.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
-
-    // Redirect to frontend with token
-    res.redirect(`${process.env.CLIENT_URL}/home.html`);
-  }
+  googleAuthCallback
 );
 
 app.use((req, res, next) => {
