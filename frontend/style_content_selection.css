@@ -239,10 +239,6 @@ main
     font-size: 16px;
 }
 
-/* .suggestions div input{
-    width: 30px;
-} */
-
 .suggestions div:hover, .suggestions .selected {
     background: #f0f0f0;
 }

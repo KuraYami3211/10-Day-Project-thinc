@@ -105,3 +105,7 @@ app.listen(PORT,()=>{
     console.log(`Listening on port ${PORT}`);
 })
 
+// app.use(cors({
+//     origin: "http://localhost:3000", // Frontend URL
+//     credentials: true // Allow sending cookies or headers
+// }));
