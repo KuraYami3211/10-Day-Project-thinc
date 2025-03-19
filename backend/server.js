@@ -41,11 +41,7 @@ passport.use(
 );
 
 // Google OAuth Strategy
-app.get(
-  "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "/" }),
-  googleAuthCallback // Call the controller function
-);
+
 app.get("/auth/google", (req, res, next) => {
   const redirectUri = `${process.env.SERVER_URL}/auth/google/callback`;
   console.log("Redirect URI Used:", redirectUri); // Log the redirect URI BEFORE authentication
@@ -75,7 +71,7 @@ app.get(
     const token = jwt.sign({ id: user.googleId, email: user.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
     // Redirect to frontend with token
-    res.redirect(`${process.env.CLIENT_URL}/dashboard?token=${token}`);
+    res.redirect(`${process.env.CLIENT_URL}/home.html`);
   }
 );
 
