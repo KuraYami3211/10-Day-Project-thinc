@@ -99,6 +99,7 @@ main {
 
 .sidebar {
     width: 320px;
+    height: 600px;
     background: #e5e5e5;
     color: #14213D;
     padding: 20px;
@@ -189,7 +190,7 @@ main {
 }
 
 #progress {
-    width: 750px;
+    width: 55%;
     height: 82px;
     top: 220px;
     left: 526px;
@@ -214,8 +215,7 @@ main {
 }
 
 .video iframe {
-    padding-left: 10px;
-    padding-top: 10px;
+    padding: 10px 10px;
     position: absolute;
 }
 
