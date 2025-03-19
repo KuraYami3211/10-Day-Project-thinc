@@ -78,9 +78,26 @@ async function recommendedCourses() {
             
             const link = document.createElement("a");
             link.href = "Video_Lessons.html";
+            link.id ="course-link";
+            link.addEventListener("click", function(event) {
+                // Prevent the default navigation to allow for data storage first
+                event.preventDefault();
+            
+                // Store the course data in localStorage
+                const courseData = {
+                  courseId: course.courseID,
+                  courseName: course.courseName,
+                  imageUrl: "img/" + course.courseID + ".png"
+                };
+            
+                localStorage.setItem("courseData", JSON.stringify(courseData));
+            
+                // Now navigate to the Video_Lessons.html page
+                window.location.href = "Video_Lessons.html";
+              });
 
             const courseImg = document.createElement("img");
-            courseImg.src = "img/" + course.courseName.replace(" ", "") + ".png";
+            courseImg.src = "img/" + course.courseID + ".png";
 
             courseImg.className = "course-icon";
 
@@ -88,7 +105,7 @@ async function recommendedCourses() {
             courseInfo.className = "course-info";
 
             const courseID = document.createElement("h2");
-            courseID.innerHTML = course.couseID ; // Fallback if courseID is missing
+            courseID.innerHTML = course.courseID ; // Fallback if courseID is missing
 
             const courseName = document.createElement("h3");
             courseName.innerHTML = course.courseName || "No Name Available"; // Fallback if courseName is missing
