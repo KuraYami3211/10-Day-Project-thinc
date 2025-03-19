@@ -98,7 +98,7 @@ main {
 }
 
 .sidebar {
-    width: 396px;
+    width: 320px;
     background: #e5e5e5;
     color: #14213D;
     padding: 20px;
@@ -116,11 +116,34 @@ main {
     font-size: 16px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
 }
 
 .course-title img {
-    width: 20px;
+    width: 80px;
+}
+
+.subject {
+    font-weight: 700;
+}
+
+.subject h1 {
+    margin: 0;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.subject h2 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.sidebar hr {
+    margin-top: 20px;
+    border-color: #14213D;
+    width: 300px;
+    border-width: 3px;
+    padding-left: 20px;
 }
 
 .menu {
@@ -129,19 +152,19 @@ main {
 
 .menu-item {
     margin-top: 10px;
-    padding-left: 40px;
+    padding-left: 35px;
     display: flex;
     align-items: center;
-    gap: 27px;
+    gap: 20px;
 }
 
 .menu-item span {
     font-weight: 700;
-    font-size: 25px;
+    font-size: 24px;
     height: 32px;
 }
 
-.menu-item ul {
+/* .menu-item ul {
     list-style: none;
     padding-left: 15px;
 }
@@ -154,7 +177,7 @@ main {
 
 .menu-item ul li:hover {
     text-decoration: underline;
-}
+} */
 
 .content {
     flex: 1;
@@ -166,10 +189,10 @@ main {
 }
 
 #download {
-    width: 841px;
+    width: 750px;
     height: 82px;
-    top: 240px;
-    left: 580px;
+    top: 220px;
+    left: 526px;
     background-color: #fca311;
     border-radius: 25px;
     position: absolute;
@@ -177,13 +200,14 @@ main {
     gap: 20px;
 }
 
-#download h1 {
-    padding-top: 22px;
-    padding-left: 300px;
+#download a {
+    padding-top: 20px;
+    padding-left: 260px;
     margin: 0;
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 700;
     color: #14213D;
+    text-decoration: none;
 }
 
 #download img {
