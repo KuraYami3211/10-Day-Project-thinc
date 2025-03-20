@@ -1,16 +1,19 @@
 const engineeringMajors = [
-    "วิศวกรรมโยธา", "วิศวกรรมไฟฟ้า", "วิศวกรรมเครื่องกล",
-    "วิศวกรรมยานยนต์", "วิศวกรรมอุตสาหการ", "วิศวกรรมเคมี",
-    "วิศวกรรมทรัพยากรธรณี", "วิศวกรรมปิโตรเลียม", "วิศวกรรมสิ่งแวดล้อม",
-    "วิศวกรรมสำรวจ", "วิศวกรรมโลหการและวัสดุ", "วิศวกรรมคอมพิวเตอร์(CP)",
-    "วิศวกรรมคอมพิวเตอร์และเทคโนโลยีดิจิทัล(CEDT)", "วิศวกรรมนิวเคลียร์และรังสี",
-    "วิศวกรรมการออกแบบและการผลิตยานยนต์ (ASME)", "วิศวกรรมนาโน(NANO) ",
-    "วิศวกรรมสารสนเทศและการสื่อสาร (ICE)", "วิศวกรรมอากาศยาน(AERO)",
-    "วิศวกรรมหุ่นยนต์และปัญญาประดิษฐ์ (AI)", "วิศวกรรมเคมีและกระบวนการ (CHEPE)",
-    "วิศวกรรมเซมิคอนดักเตอร์"
+    // "วิศวกรรมโยธา", "วิศวกรรมไฟฟ้า", "วิศวกรรมเครื่องกล",
+    // "วิศวกรรมยานยนต์", "วิศวกรรมอุตสาหการ", "วิศวกรรมเคมี",
+    // "วิศวกรรมทรัพยากรธรณี", "วิศวกรรมปิโตรเลียม", "วิศวกรรมสิ่งแวดล้อม",
+    // "วิศวกรรมสำรวจ", "วิศวกรรมโลหการและวัสดุ", "วิศวกรรมคอมพิวเตอร์(CP)",
+    // "วิศวกรรมคอมพิวเตอร์และเทคโนโลยีดิจิทัล(CEDT)", "วิศวกรรมนิวเคลียร์และรังสี",
+    // "วิศวกรรมการออกแบบและการผลิตยานยนต์ (ASME)", "วิศวกรรมนาโน(NANO) ",
+    // "วิศวกรรมสารสนเทศและการสื่อสาร (ICE)", "วิศวกรรมอากาศยาน(AERO)",
+    // "วิศวกรรมหุ่นยนต์และปัญญาประดิษฐ์ (AI)", "วิศวกรรมเคมีและกระบวนการ (CHEPE)",
+    // "วิศวกรรมเซมิคอนดักเตอร์"
+    "วิศวกรรมคอมพิวเตอร์(CP)"
 ];
 
-const academicYears = ["1/1", "1/2", "2/1", "2/2", "3/1", "3/2", "4/1", "4/2"]; // ปีการศึกษา
+const academicYears = ["1/1", "1/2",
+    //  "2/1", "2/2", "3/1", "3/2", "4/1", "4/2"
+    ]; // ปีการศึกษา
 
 // ฟังก์ชัน Autocomplete
 function setupAutocomplete(inputElement, suggestionElement, dataList) {
@@ -78,9 +81,26 @@ async function recommendedCourses() {
             
             const link = document.createElement("a");
             link.href = "Video_Lessons.html";
+            link.id ="course-link";
+            link.addEventListener("click", function(event) {
+                // Prevent the default navigation to allow for data storage first
+                event.preventDefault();
+            
+                // Store the course data in localStorage
+                const courseData = {
+                  courseId: course.courseID,
+                  courseName: course.courseName,
+                  imageUrl: "img/" + course.courseID + ".png"
+                };
+            
+                localStorage.setItem("courseData", JSON.stringify(courseData));
+            
+                // Now navigate to the Video_Lessons.html page
+                window.location.href = "Video_Lessons.html";
+              });
 
             const courseImg = document.createElement("img");
-            courseImg.src = "img/" + course.courseName.replace(" ", "") + ".png";
+            courseImg.src = "img/" + course.courseID + ".png";
 
             courseImg.className = "course-icon";
 
@@ -88,7 +108,7 @@ async function recommendedCourses() {
             courseInfo.className = "course-info";
 
             const courseID = document.createElement("h2");
-            courseID.innerHTML = course.couseID ; // Fallback if courseID is missing
+            courseID.innerHTML = course.courseID ; // Fallback if courseID is missing
 
             const courseName = document.createElement("h3");
             courseName.innerHTML = course.courseName || "No Name Available"; // Fallback if courseName is missing
@@ -115,7 +135,7 @@ async function recommendedCourses() {
     } else {
         resultContainer.innerHTML = `<li>${data.message}</li>`;
     }
-}
+};
 
 
 

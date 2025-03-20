@@ -1,24 +1,14 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = 3000;
+const course = require("./data/courseInfo.js");
+const file = require("./data/file.js")
+const PORT = process.env.CONTENT_API_PORT || 6000;
 
 app.use(express.static("frontend"));
 
 app.use(express.json());
 
-  
-
-const course = [
-  { couseID:"2301107",courseName: "Cal I", department: "วิศวกรรมคอมพิวเตอร์(CP)", year: "1/1" },
-  { couseID:"2301108",courseName: "Cal II", department: "วิศวกรรมคอมพิวเตอร์(CP)", year: "1/2" },
-  { couseID:"2301103",courseName: "Gen Phy I", department: "วิศวกรรมคอมพิวเตอร์(CP)", year: "1/1" },
-  { couseID:"2304104",courseName: "Gen Phy II", department: "วิศวกรรมคอมพิวเตอร์(CP)", year: "1/2" },
-  { couseID:"2302127",courseName: "Gen Chem", department: "วิศวกรรมคอมพิวเตอร์(CP)", year: "1/2" },
-  { couseID:"2110215",courseName: "Prog Meth", department: "วิศวกรรมคอมพิวเตอร์(CP)", year: "1/2" },
-  { couseID:"2110221",courseName: "Com Eng Ess", department: "วิศวกรรมคอมพิวเตอร์(CP)", year: "1/2" },
-  { couseID:"2110101",courseName: "Computer Programming", department: "วิศวกรรมคอมพิวเตอร์(CP)", year: "1/1" },
-];
 
 app.post("/recommend", (req, res) => {
   const { department , year} = req.body;
@@ -37,6 +27,30 @@ app.get("/", (req, res) =>{
   res.sendFile(path.join(__dirname,"..","frontend","firsthome.html"))
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+
+app.post("/list-file", (req, res) => {
+  const { courseID, term } = req.body;
+
+  if (!courseID || !term) {
+    return res.status(400).json({ error: "กรุณากรอกภาควิชาและชั้นปี" });
+  }
+
+  // Find the course in the `file` array
+  const course = file.find((c) => c.courseID === courseID);
+
+  if (!course) {
+    return res.status(404).json({ error: "ไม่พบรหัสวิชานี้" });
+  }
+
+  if (term === "midterm") {
+    return res.json({ files: course.midterm });
+  } else if (term === "final") {
+    return res.json({ files: course.final });
+  } else {
+    return res.status(400).json({ error: "กรุณาระบุภาคการสอบให้ถูกต้อง (midterm หรือ final)" });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

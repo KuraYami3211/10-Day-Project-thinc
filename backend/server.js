@@ -4,6 +4,7 @@ const passport = require("passport");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
+const path = require("path");
 //const mongoose = require("mongoose");
 //const User = require("./models/User");
 const authRoutes = require("./routes/auth");
@@ -12,7 +13,7 @@ const { googleAuthCallback } = require("./controllers/authController");
 
 const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
-
+app.use(express.static(path.join(__dirname, "frontend"))); 
 // mongoose
 //   .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 //   .then(() => console.log("Connected to MongoDB")) // success
@@ -41,12 +42,6 @@ passport.use(
 );
 
 // Google OAuth Strategy
-
-app.get("/auth/google", (req, res, next) => {
-  const redirectUri = `${process.env.SERVER_URL}/auth/google/callback`;
-  console.log("Redirect URI Used:", redirectUri); // Log the redirect URI BEFORE authentication
-  next();
-})
 passport.serializeUser((user, done) => {
   done(null, user);
 });
@@ -57,22 +52,11 @@ passport.deserializeUser((user, done) => {
 // Redirect to Google Login
 app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
-app.use((req, res, next) => {
-  console.log(`Incoming Request: ${req.method} ${req.url}`);
-  next();
-});
 // Google OAuth Callback
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
-  (req, res) => {
-    const user = req.user;
-    console.log(user)
-    const token = jwt.sign({ id: user.googleId, email: user.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
-
-    // Redirect to frontend with token
-    res.redirect(`${process.env.CLIENT_URL}/home.html`);
-  }
+  googleAuthCallback
 );
 
 app.use((req, res, next) => {
@@ -93,8 +77,11 @@ app.get("/protected", (req, res) => {
     res.status(401).json({ message: "Invalid token" });
   }
 });
+// app.get("/", (req, res) =>{
+//   res.sendFile(path.join(__dirname,"..","frontend","firsthome.html"))
+// });
 //PORT
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>{
     console.log(`Listening on port ${PORT}`);
 })

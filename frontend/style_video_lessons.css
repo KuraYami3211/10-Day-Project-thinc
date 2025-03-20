@@ -6,17 +6,16 @@ html, body {
 }
 
 body {
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     padding: 0;
     line-height: 1.6;
-    margin: 0;
-    box-sizing: 0;
     background-color: #e5e5e5;
     width: 100%;
+    overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
 }
 
 /* 
-search_bar 
+Search Bar 
 */
 .top-bar {
     background-color: #E5E5E5;
@@ -54,7 +53,7 @@ search_bar
 }
 
 /* 
-header
+Header
  */
 .header {
     background-color: #14213D;
@@ -78,7 +77,6 @@ header
     display: flex;
     gap: 20px;
     color: white;
-
 }
 
 .nav-links a {
@@ -97,6 +95,7 @@ main {
     background-color: white;
 }
 
+/* Sidebar */
 .sidebar {
     width: 320px;
     height: 600px;
@@ -155,16 +154,61 @@ main {
     margin-top: 10px;
     padding-left: 35px;
     display: flex;
-    align-items: center;
     gap: 20px;
+<<<<<<< HEAD
+    padding-bottom: 10px;
+||||||| c53b1a1
+=======
+  flex-direction: column; /* จัดให้เป็นแนวตั้ง */
+>>>>>>> 0491640eab6ceea5aed90491aa6dcfa05843e29c
 }
 
 .menu-item span {
     font-weight: 700;
     font-size: 24px;
     height: 32px;
+    display: inline-block; /* ทำให้ <span> เรียงแนวนอน */
+
+}
+.item span
+{
+    display: block; /* ทำให้แต่ละอันแสดงผลแยกบรรทัด */
+    margin-left: 20px; /* เว้นระยะจากหัวข้อหลัก */
+    font-size: 21px; /* ปรับขนาดตัวอักษรให้เล็กลง */
+    color: #555; /* (ไม่บังคับ) เปลี่ยนสีให้ดูซอฟต์ลง */
 }
 
+<<<<<<< HEAD
+.menu-item a {
+    text-decoration: none;
+    color: #14213D;
+}
+
+.choice {
+    padding-left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+
+.choice a {
+    margin: 0;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    color: #14213D;
+    padding-left: 15px;
+    font-weight: 500;
+}
+
+.choice a:hover {
+    text-decoration: underline;
+} 
+
+
+||||||| c53b1a1
 /* .menu-item ul {
     list-style: none;
     padding-left: 15px;
@@ -180,6 +224,11 @@ main {
     text-decoration: underline;
 } */
 
+=======
+/* 
+Content
+*/
+>>>>>>> 0491640eab6ceea5aed90491aa6dcfa05843e29c
 .content {
     flex: 1;
     padding: 20px;
@@ -187,8 +236,12 @@ main {
     border-radius: 10px;
     margin: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* ป้องกันการล้นของเนื้อหา */
 }
 
+/* 
+แก้ปัญหาการซ้อนของแถบสีส้ม (Progress Bar)
+*/
 #progress {
     width: 55%;
     height: 82px;
@@ -204,6 +257,16 @@ main {
     padding-left: 38px;
     padding-top: 15px;
 }
+<<<<<<< HEAD
+
+.video {
+    width: 800px;
+    height: 300px;
+    top: 330px;
+    left: 500px;
+    background-color: #E5E5E5;
+    position: absolute;
+||||||| c53b1a1
 
 .video {
     width: 800px;
@@ -212,15 +275,112 @@ main {
     left: 500px;
     background-color: #E5E5E5;
     position: absolute;
+=======
+/* 
+PDF Container (แก้ปัญหาการแสดง PDF)
+*/
+#pdfContainer {
+    width: 100%;
+    max-width: 900px;
+    height: 80vh;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 120px; /* เลื่อน PDF ลงมา 100px */
+    margin-left: 300px;
+>>>>>>> 0491640eab6ceea5aed90491aa6dcfa05843e29c
 }
 
-.video iframe {
-    padding: 10px 10px;
-    position: absolute;
+/* ป้องกันการทับกันของ PDF */
+#pdfContainer canvas {
+    display: block;
+    margin:  auto; /* จัดตรงกลาง */
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-footer{
-    background-color:#14213D ;
+/* ป้องกันการล้นของเนื้อหา */
+body {
+    overflow-x: hidden;
+}
+
+/* Footer */
+footer {
+    background-color: #14213D;
     text-align: center;
     padding: 12px;
+    color: white;
+}
+/* กำหนดสไตล์ให้ ul */
+#filecontainer {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 400px;
+    margin-top: 300px;
+    margin-left: 600px;
+}
+
+/* กำหนดสไตล์ให้ li */
+#file {
+    background: #fca311;
+    color: white;
+    padding: 12px 16px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+/* Ensure the video container takes full width */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh; /* Adjust height as needed */
+}
+
+/* Make the video super wide */
+.video-frame {
+    width: 95vw;  /* Almost full screen width */
+    max-width: 1000px; /* Extra-wide video */
+    height: 500px; /* Increase height */
+    border-radius: 12px; /* Smooth rounded corners */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .video-frame {
+        width: 95%;
+        height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-frame {
+        width: 98%;
+        height: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-frame {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+#main {
+    margin-left: 250px; /* Adjust based on your sidebar width */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
