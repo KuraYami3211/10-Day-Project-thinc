@@ -27,6 +27,29 @@ app.get("/", (req, res) =>{
   res.sendFile(path.join(__dirname,"..","frontend","firsthome.html"))
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.post("/list-file", (req, res) => {
+  const { courseID, term } = req.body;
+
+  if (!courseID || !term) {
+    return res.status(400).json({ error: "กรุณากรอกภาควิชาและชั้นปี" });
+  }
+
+  // Find the course in the `file` array
+  const course = file.find((c) => c.courseID === courseID);
+
+  if (!course) {
+    return res.status(404).json({ error: "ไม่พบรหัสวิชานี้" });
+  }
+
+  if (term === "midterm") {
+    return res.json({ files: course.midterm });
+  } else if (term === "final") {
+    return res.json({ files: course.final });
+  } else {
+    return res.status(400).json({ error: "กรุณาระบุภาคการสอบให้ถูกต้อง (midterm หรือ final)" });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });

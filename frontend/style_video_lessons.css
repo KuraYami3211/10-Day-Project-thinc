@@ -11,6 +11,8 @@ body {
     line-height: 1.6;
     background-color: #e5e5e5;
     width: 100%;
+    background-color: #e5e5e5;
+    width: 100%;
     overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
 }
 
@@ -51,10 +53,6 @@ Search Bar
     color: black;
     margin: 20px;
 }
-
-/* 
-Header
- */
 .header {
     background-color: #14213D;
     padding: 15px 20px;
@@ -77,8 +75,8 @@ Header
     display: flex;
     gap: 20px;
     color: white;
-}
 
+}
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -94,8 +92,6 @@ main {
     height: calc(100vh - 120px);
     background-color: white;
 }
-
-/* Sidebar */
 .sidebar {
     width: 320px;
     height: 600px;
@@ -118,7 +114,6 @@ main {
     align-items: center;
     gap: 30px;
 }
-
 .course-title img {
     width: 80px;
 }
@@ -137,7 +132,6 @@ main {
     font-size: 22px;
     margin: 0;
 }
-
 .sidebar hr {
     margin-top: 20px;
     border-color: #14213D;
@@ -155,12 +149,7 @@ main {
     padding-left: 35px;
     display: flex;
     gap: 20px;
-<<<<<<< HEAD
-    padding-bottom: 10px;
-||||||| c53b1a1
-=======
   flex-direction: column; /* จัดให้เป็นแนวตั้ง */
->>>>>>> 0491640eab6ceea5aed90491aa6dcfa05843e29c
 }
 
 .menu-item span {
@@ -168,7 +157,6 @@ main {
     font-size: 24px;
     height: 32px;
     display: inline-block; /* ทำให้ <span> เรียงแนวนอน */
-
 }
 .item span
 {
@@ -177,58 +165,6 @@ main {
     font-size: 21px; /* ปรับขนาดตัวอักษรให้เล็กลง */
     color: #555; /* (ไม่บังคับ) เปลี่ยนสีให้ดูซอฟต์ลง */
 }
-
-<<<<<<< HEAD
-.menu-item a {
-    text-decoration: none;
-    color: #14213D;
-}
-
-.choice {
-    padding-left: 80px;
-    display: flex;
-    align-items: center;
-    gap: 1px;
-}
-
-
-.choice a {
-    margin: 0;
-    font-size: 13px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 15px;
-    color: #14213D;
-    padding-left: 15px;
-    font-weight: 500;
-}
-
-.choice a:hover {
-    text-decoration: underline;
-} 
-
-
-||||||| c53b1a1
-/* .menu-item ul {
-    list-style: none;
-    padding-left: 15px;
-}
-
-.menu-item ul li {
-    margin: 5px 0;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-.menu-item ul li:hover {
-    text-decoration: underline;
-} */
-
-=======
-/* 
-Content
-*/
->>>>>>> 0491640eab6ceea5aed90491aa6dcfa05843e29c
 .content {
     flex: 1;
     padding: 20px;
@@ -238,12 +174,8 @@ Content
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     overflow: auto; /* ป้องกันการล้นของเนื้อหา */
 }
-
-/* 
-แก้ปัญหาการซ้อนของแถบสีส้ม (Progress Bar)
-*/
 #progress {
-    width: 55%;
+    width: 63%;
     height: 82px;
     top: 220px;
     left: 526px;
@@ -257,25 +189,6 @@ Content
     padding-left: 38px;
     padding-top: 15px;
 }
-<<<<<<< HEAD
-
-.video {
-    width: 800px;
-    height: 300px;
-    top: 330px;
-    left: 500px;
-    background-color: #E5E5E5;
-    position: absolute;
-||||||| c53b1a1
-
-.video {
-    width: 800px;
-    height: 420px;
-    top: 330px;
-    left: 500px;
-    background-color: #E5E5E5;
-    position: absolute;
-=======
 /* 
 PDF Container (แก้ปัญหาการแสดง PDF)
 */
@@ -291,23 +204,20 @@ PDF Container (แก้ปัญหาการแสดง PDF)
     position: relative;
     margin-top: 120px; /* เลื่อน PDF ลงมา 100px */
     margin-left: 300px;
->>>>>>> 0491640eab6ceea5aed90491aa6dcfa05843e29c
 }
 
 /* ป้องกันการทับกันของ PDF */
 #pdfContainer canvas {
-    display: block;
-    margin:  auto; /* จัดตรงกลาง */
-    max-width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+display: block;
+margin:  auto; /* จัดตรงกลาง */
+max-width: 100%;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* ป้องกันการล้นของเนื้อหา */
 body {
-    overflow-x: hidden;
+overflow-x: hidden;
 }
-
-/* Footer */
 footer {
     background-color: #14213D;
     text-align: center;
@@ -323,8 +233,6 @@ footer {
     margin-top: 300px;
     margin-left: 600px;
 }
-
-/* กำหนดสไตล์ให้ li */
 #file {
     background: #fca311;
     color: white;
@@ -346,41 +254,39 @@ footer {
     width: 100%;
     height: 90vh; /* Adjust height as needed */
 }
-
-/* Make the video super wide */
 .video-frame {
     width: 95vw;  /* Almost full screen width */
     max-width: 1000px; /* Extra-wide video */
-    height: 500px; /* Increase height */
-    border-radius: 12px; /* Smooth rounded corners */
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+height: 500px; /* Increase height */
+border-radius: 12px; /* Smooth rounded corners */
+box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-    .video-frame {
-        width: 95%;
-        height: 600px;
-    }
+.video-frame {
+    width: 95%;
+    height: 600px;
+}
 }
 
 @media (max-width: 768px) {
-    .video-frame {
-        width: 98%;
-        height: 450px;
-    }
+.video-frame {
+    width: 98%;
+    height: 450px;
+}
 }
 
 @media (max-width: 480px) {
-    .video-frame {
-        width: 100%;
-        height: 350px;
-    }
+.video-frame {
+    width: 100%;
+    height: 350px;
+}
 }
 
 #main {
-    margin-left: 250px; /* Adjust based on your sidebar width */
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+margin-left: 250px; /* Adjust based on your sidebar width */
+padding: 20px;
+display: flex;
+justify-content: center;
 }
