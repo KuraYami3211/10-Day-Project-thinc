@@ -165,17 +165,13 @@ main {
     height: 32px;
 }
 
-.menu-item a {
-    text-decoration: none;
-    color: #14213D;
-}
-
 .choice {
     padding-left: 80px;
     display: flex;
     align-items: center;
     gap: 1px;
 }
+
 
 .choice a {
     margin: 0;
@@ -192,16 +188,7 @@ main {
     text-decoration: underline;
 } 
 
-.content {
-    flex: 1;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#download {
+#progress {
     width: 750px;
     height: 82px;
     top: 220px;
@@ -209,23 +196,27 @@ main {
     background-color: #fca311;
     border-radius: 25px;
     position: absolute;
-    display: flex;
-    gap: 20px;
 }
 
-#download a {
-    padding-top: 20px;
-    padding-left: 260px;
-    margin: 0;
-    font-size: 27px;
-    font-weight: 700;
+#progress img {
+    height: 51px;
+    padding-left: 38px;
+    padding-top: 15px;
+}
+
+#course-syllabus {
+    background-color: #E5E5E5;
+    left: 526px;
+    border-radius: 25px;
+    top: 333px;
+    height: 300px;
+    width: 750px;
+    position: absolute;
+    text-align: center;
+}
+
+#course-syllabus h1 {
     color: #14213D;
-    text-decoration: none;
-}
-
-#download img {
-    height: 60px;
-    padding-top: 10px;
 }
 
 footer{

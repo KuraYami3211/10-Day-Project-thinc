@@ -155,7 +155,12 @@ main {
     padding-left: 35px;
     display: flex;
     gap: 20px;
+<<<<<<< HEAD
+    padding-bottom: 10px;
+||||||| c53b1a1
+=======
   flex-direction: column; /* จัดให้เป็นแนวตั้ง */
+>>>>>>> 0491640eab6ceea5aed90491aa6dcfa05843e29c
 }
 
 .menu-item span {
@@ -173,9 +178,57 @@ main {
     color: #555; /* (ไม่บังคับ) เปลี่ยนสีให้ดูซอฟต์ลง */
 }
 
+<<<<<<< HEAD
+.menu-item a {
+    text-decoration: none;
+    color: #14213D;
+}
+
+.choice {
+    padding-left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+
+.choice a {
+    margin: 0;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    color: #14213D;
+    padding-left: 15px;
+    font-weight: 500;
+}
+
+.choice a:hover {
+    text-decoration: underline;
+} 
+
+
+||||||| c53b1a1
+/* .menu-item ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.menu-item ul li {
+    margin: 5px 0;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.menu-item ul li:hover {
+    text-decoration: underline;
+} */
+
+=======
 /* 
 Content
 */
+>>>>>>> 0491640eab6ceea5aed90491aa6dcfa05843e29c
 .content {
     flex: 1;
     padding: 20px;
@@ -204,6 +257,25 @@ Content
     padding-left: 38px;
     padding-top: 15px;
 }
+<<<<<<< HEAD
+
+.video {
+    width: 800px;
+    height: 300px;
+    top: 330px;
+    left: 500px;
+    background-color: #E5E5E5;
+    position: absolute;
+||||||| c53b1a1
+
+.video {
+    width: 800px;
+    height: 420px;
+    top: 330px;
+    left: 500px;
+    background-color: #E5E5E5;
+    position: absolute;
+=======
 /* 
 PDF Container (แก้ปัญหาการแสดง PDF)
 */
@@ -219,6 +291,7 @@ PDF Container (แก้ปัญหาการแสดง PDF)
     position: relative;
     margin-top: 120px; /* เลื่อน PDF ลงมา 100px */
     margin-left: 300px;
+>>>>>>> 0491640eab6ceea5aed90491aa6dcfa05843e29c
 }
 
 /* ป้องกันการทับกันของ PDF */
