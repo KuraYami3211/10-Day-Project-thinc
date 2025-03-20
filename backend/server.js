@@ -4,6 +4,7 @@ const passport = require("passport");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
+const path = require("path");
 //const mongoose = require("mongoose");
 //const User = require("./models/User");
 const authRoutes = require("./routes/auth");
