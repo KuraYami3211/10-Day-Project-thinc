@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const course = require("./data/courseInfo.js");
 const file = require("./data/file.js")
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.CONTENT_API_PORT || 6000;
 
 app.use(express.static("frontend"));
 
