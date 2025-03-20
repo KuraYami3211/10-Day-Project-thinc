@@ -76,6 +76,9 @@ app.get("/protected", (req, res) => {
     res.status(401).json({ message: "Invalid token" });
   }
 });
+app.get("/", (req, res) =>{
+  res.sendFile(path.join(__dirname,"..","frontend","firsthome.html"))
+});
 //PORT
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>{
